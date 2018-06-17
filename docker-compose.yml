@@ -1,0 +1,14 @@
+version: '3.5'
+services:
+  goworkspace:
+    build:
+      context: .
+      dockerfile: goworkspace.Dockerfile
+    entrypoint: /bin/sleep infinity
+    restart: unless-stopped
+    volumes:
+      - ./:/code/
+
+networks:
+  default:
+    name: myproject
